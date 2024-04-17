@@ -1,0 +1,29 @@
+<div class="modal" (click)="onClose()">
+    <div class="dialog" (click)="onModalContentClick($event)">
+        <div class="header">
+            <label>Title: </label>
+            <h2 *ngIf="!isEditMode">
+                {{postData.title}}
+            </h2>
+
+            <input class="edit_mode_title" *ngIf="isEditMode" id="title" [(ngModel)]="postData.title">
+            <div class="edit_mode">
+                <label>Enter Edit Mode</label>
+                <input type="checkbox" [(ngModel)]="isEditMode">
+            </div>
+        </div>
+        
+        <div class="body">
+            <label>Body: </label>
+            <p *ngIf="!isEditMode">{{postData.body}}</p>
+            <input *ngIf="isEditMode" [(ngModel)]="postData.body" class="edit_mode_body">
+        </div>
+
+
+        <div class="buttons">
+            <button (click)="onClose()">Close</button>
+            <button (click)="saveAndExit()" *ngIf="isEditMode">Save and Exit</button>
+        </div>
+        
+    </div>
+</div>

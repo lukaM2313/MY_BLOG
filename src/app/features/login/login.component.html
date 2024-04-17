@@ -1,0 +1,5 @@
+<div class="main_background">
+    <app-login-modal *ngIf="!isModalSwitched" (switchModal)="switchModal()"></app-login-modal>
+    <app-register-modal *ngIf="isModalSwitched" (switchModal)="switchModal()"></app-register-modal>
+</div>
+

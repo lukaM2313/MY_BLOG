@@ -1,0 +1,30 @@
+<div class="modal">
+    <h2>Login as Admin</h2>
+    <form [formGroup]="loginForm" class="form" (ngSubmit)="onSubmit">
+        <p *ngIf="creadentialsInvalid" class="error-message">Username or Password is wrong</p>
+        <div class="element">
+            <label>Username: </label>
+            <input type="text" formControlName="username">
+            <div *ngIf="usernameInvalid" class="error-message">
+                Please fill in your username
+            </div>
+        </div>
+        <div class="element">
+            <label>Password: </label>
+            <div>
+                <input id="password" type="{{ isPasswordVisible ? 'text' : 'password' }}" formControlName="password">
+                <i *ngIf="!isPasswordVisible" (click)="changePasswordType()" class="fa-solid fa-eye"></i>
+                <i *ngIf="isPasswordVisible" (click)="changePasswordType()" class="fa-solid fa-eye-slash"></i>
+                <div *ngIf="passwordInvalid" class="error-message">
+                    Please fill in your password
+                </div>
+            </div>
+        </div>
+    </form>
+    <div>
+        <button (click)="onSubmit()">
+            Login
+        </button>
+    </div>
+    <p (click)="onSwitch()">Don't have an account click here to register</p>
+</div>

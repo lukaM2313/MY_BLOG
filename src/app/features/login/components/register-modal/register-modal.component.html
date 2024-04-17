@@ -1,0 +1,48 @@
+<div class="modal">
+    <h2>Register as Admin</h2>
+    <form [formGroup]="registerForm" class="form" (ngSubmit)="onSubmit">
+        <div class="element">
+            <label>Username: </label>
+            <input type="text" formControlName="username">
+            <div *ngIf="usernameInvalid" class="error-message">
+                Please fill in your username
+            </div>
+        </div>
+        <div class="element">
+            <label>Email: </label>
+            <input type="text" formControlName="email">
+            <div *ngIf="emailInvalid" class="error-message">
+                Please fill in your email
+            </div>
+        </div>
+        <div class="element">
+            <label>Password: </label>
+            <div>
+                <input type="{{ isPasswordVisible ? 'text' : 'password' }}" formControlName="password">
+                <i *ngIf="!isPasswordVisible" (click)="changePasswordType()" class="fa-solid fa-eye"></i>
+                <i *ngIf="isPasswordVisible" (click)="changePasswordType()" class="fa-solid fa-eye-slash"></i>
+                <div *ngIf="passwordInvalid" class="error-message">
+                    Please fill in your password
+                </div>
+            </div>
+        </div>
+        <div class="element">
+            <label>Repeat Password</label>
+            <div>
+                <input type="{{ isRepeatPasswordVisible ? 'text' : 'password' }}" formControlName="repeatPassword">
+                <i *ngIf="!isRepeatPasswordVisible" (click)="changeRepeatPasswordType()" class="fa-solid fa-eye"></i>
+                <i *ngIf="isRepeatPasswordVisible" (click)="changeRepeatPasswordType()" class="fa-solid fa-eye-slash"></i>
+                <div *ngIf="registerForm.hasError('passwordMismatch')" class="error-message">
+                    Passwords do not match.
+                </div>
+            </div>
+            
+        </div>
+    </form>
+    <div>
+        <button (click)="onSubmit()">
+            Register
+        </button>
+    </div>
+    <p (click)="onSwitch()">Already have an account? Click here to login</p>
+</div>

@@ -1,0 +1,23 @@
+<div class="modal" (click)="onClose()">
+    <div class="dialog" (click)="onModalContentClick($event)">
+        <div class="header">
+            <div class="item">
+                <p>Select all Users</p>
+                <input type="checkbox" [(ngModel)]="selectAll" (click)="selectAllUsers()">
+            </div>
+            <i (click)="onClose()" class="fa-solid fa-x"></i>
+            
+        </div>
+        <div class="items">
+            <div *ngFor="let user of users" class="item">
+                <p>id: {{user.id}}</p>
+                <p>name: {{user.name}}</p>
+                <p>username: {{user.username}}</p>
+                <p>selected {{user.selected}}</p>
+                <input type="checkbox" [(ngModel)]="user.selected">
+            </div>
+        </div>
+        <button (click)="filter()">Filter</button>
+        
+    </div>
+</div>

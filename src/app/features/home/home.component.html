@@ -1,0 +1,11 @@
+<div class="main_body">
+    <app-header></app-header>
+    <app-posts-nav></app-posts-nav>
+    <app-posts-body></app-posts-body>
+    <app-error-modal 
+        *ngIf="isErrorModalVisible" 
+        (closeModal)="closeModal()" 
+        [errorTitle]="errorTitle"
+        [errorMessage]="errorMessage"
+    ></app-error-modal>
+</div>

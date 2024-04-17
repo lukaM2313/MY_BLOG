@@ -1,0 +1,8 @@
+<div class="modal" (click)="onClose()">
+    <div class="dialog" (click)="onModalContentClick($event)">
+        <h2>Error</h2>
+        <label>{{errorTitle}}</label>
+        <p>{{errorMessage}}</p>
+        <button (click)="onClose()">Close</button>
+    </div>
+</div>

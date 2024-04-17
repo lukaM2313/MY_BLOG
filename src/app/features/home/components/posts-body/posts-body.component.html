@@ -1,0 +1,13 @@
+<div class="posts_body">
+    <div *ngFor="let post of posts | userIdFilter:selectedUsersIds">
+        <app-posts-card 
+            [id]="post.id" 
+            (openModalWithRead)="openModalWithRead(post.id)"
+            (openModalWithEdit)="openModalWithEdit(post.id)"
+            ></app-posts-card>
+    </div>
+</div>
+
+<app-posts-read-edit-modal *ngIf="isPostreadEditModalVisible" (closeModal)="closeModal()" [isEditMode]="isEditMode"></app-posts-read-edit-modal>
+
+

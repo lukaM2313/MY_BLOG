@@ -1,0 +1,60 @@
+.element {
+    padding: 10px;
+    background-color: #393939;
+    margin-bottom: 10px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    
+
+    .info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 30px
+    }
+
+    label {
+        width: 80px;
+        display: flex;
+        align-items: center;
+    }
+
+    p {
+        width: 320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    button {
+        background: #D68601;
+        font-size: 15px;
+        color: #fff;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        padding: 5px 15px;
+
+        border: black solid 1px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .delete_button {
+        background-color: #b30000;
+    }
+
+    .read_button {
+        background-color: #25bd07;
+    }
+    
+
+}

@@ -1,0 +1,27 @@
+<div class="modal" (click)="onClose()">
+    <div class="dialog" (click)="onModalContentClick($event)">
+        <form [formGroup]="postForm">
+            <b *ngIf="titleIsInvalid">Please fill title</b>
+            <div class="element">
+                <label>Title: </label>
+                <input type="text" formControlName="title">
+            </div>
+            <b *ngIf="bodyIsInvalid">Please fill body</b>
+            <div class="element">
+                <label>Body:</label>
+                <input type="text" formControlName="body">
+            </div>
+            <b *ngIf="userIdIsInvalid">Please choose user id</b>
+            <div class="element">
+                <label>Choose user ID: </label>
+                <select formControlName="userId">
+                    <option *ngFor="let userId of userIds" [value]="userId">{{ userId }}</option>
+                </select>
+            </div>  
+        </form>
+        <div class="buttons">
+            <button (click)="onClose()">Close</button>
+            <button class="submit"  (click)="onSubmit()">Submit</button>
+        </div>
+    </div>
+</div>

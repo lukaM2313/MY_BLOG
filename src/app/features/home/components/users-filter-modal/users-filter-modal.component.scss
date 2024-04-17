@@ -1,0 +1,71 @@
+.modal {
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    h2 {
+        color: #fff;
+    }
+
+    .dialog {
+        width: 800px;
+        background-color: #616161;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px;
+        border-radius: 4px;
+        color: #fff
+    }
+
+    input {
+        cursor: pointer;
+    }
+
+    button {
+        background: #D68601;
+        font-size: 15px;
+        color: #fff;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        padding: 5px 15px;
+
+        border: black solid 1px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+
+    .items {
+        margin-top: 20px;
+        max-height: 660px;
+        overflow-y: auto;
+        .item {
+            display: flex;
+            height: 60px;
+            border-top: black solid 1px;
+            justify-content: space-between;
+    
+        }
+    }
+
+    .header {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        div {
+            display: flex;
+            gap: 5px;
+        }
+
+        i {
+            cursor: pointer;
+        }
+
+    }
+
+    
+}

@@ -1,0 +1,12 @@
+<div class="nav_body">
+    <div class="label_container">
+        <label class="id_label">ID</label>
+        <label>User ID</label>
+        <label>Title</label>
+    </div>
+    <button (click)="openAddPostModal()">Add Post</button>
+    <button (click)="openUsersModal()">Filter by users</button>
+</div>
+
+<app-users-filter-modal *ngIf="isUsersModalOpen" (closeModal)="closeModal()"></app-users-filter-modal>
+<app-add-post-modal *ngIf="isAddPostModalOpen" (closeModal)="closeAddPostModal()"></app-add-post-modal>
